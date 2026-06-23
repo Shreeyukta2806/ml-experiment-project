@@ -1,0 +1,11 @@
+experiment,lr,batch_size,dropout,optimizer,weight_decay,augment,final_val_acc,final_train_loss,final_val_loss,epochs_run,seconds
+"Baseline (Adam, lr=0.001, bs=16, dropout=0.5)",0.001,16,0.5,adam,0.0,False,0.75,0.0551,0.4464,15,19.5
+LR too low (0.00005),5e-05,16,0.5,adam,0.0,False,0.8333,0.2142,0.4703,15,15.8
+LR too high (1.0) -- UNSTABLE,1.0,16,0.5,adam,0.0,False,0.25,1.3929,1.4072,15,16.9
+Small batch (4),0.001,4,0.5,adam,0.0,False,0.6667,0.1989,1.3105,15,17.2
+Large batch (32),0.001,32,0.5,adam,0.0,False,0.5833,0.1742,0.692,15,16.9
+No dropout (0.0),0.001,16,0.0,adam,0.0,False,0.8333,0.0127,0.4196,15,17.5
+High dropout (0.7),0.001,16,0.7,adam,0.0,False,0.75,0.2175,0.4077,15,17.2
+"SGD, no momentum",0.001,16,0.5,sgd_no_momentum,0.0,False,0.8333,0.7085,0.8837,15,16.7
+With weight decay (1e-3),0.001,16,0.5,adam,0.001,False,0.75,0.1065,0.529,15,17.0
+With data augmentation,0.001,16,0.5,adam,0.0,True,0.9167,0.325,0.4029,15,17.8
